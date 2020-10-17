@@ -5,7 +5,16 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: './menu/menu.module#MenuPageModule'
+  },
+  {
+    path: 'home/:id',
+    loadChildren: () => import('./productpages/product-details/product-details.module').then( m => m.ProductDetailsPageModule)
+  },
+  {
+    path: 'store-details',
+    loadChildren: () => import('./storepages/store-details/store-details.module').then( m => m.StoreDetailsPageModule)
   }
+
 ];
 
 @NgModule({
